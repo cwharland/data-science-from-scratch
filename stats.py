@@ -1,5 +1,5 @@
-from lin_alg import *
 from __future__ import division
+from lin_alg import *
 from collections import Counter
 
 def mean(x):
