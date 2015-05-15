@@ -2,11 +2,10 @@ from __future__ import division
 from functools import partial
 import random
 from lin_alg import *
+from stats import *
 
 def difference_quotient(f, x, h):
     return (f(x + h) - f(x)) / h
-
-derivative_estimate = partial(difference_quotient, square, h = 0.00001)
 
 def partial_difference_quotient(f,  v, i, h):
     w = [v_j + (h if j == i else 0)
@@ -76,7 +75,7 @@ def in_random_order(data):
     for i in indexes:
         yield data[i]
 
-def minmize_stochastic(target_fn, gradient_fn, x, y, theta_0, alpha_0 = 0.01):
+def minimize_stochastic(target_fn, gradient_fn, x, y, theta_0, alpha_0 = 0.01):
     
     data = zip(x,y)
     theta = theta_0
@@ -103,7 +102,7 @@ def minmize_stochastic(target_fn, gradient_fn, x, y, theta_0, alpha_0 = 0.01):
     return min_theta
         
 def maximize_stochastic(target_fn, gradient_fn, x, y, theta_0, alpha_0 = 0.01):
-    return maximize_stochastic(negate(target_fn),
+    return minimize_stochastic(negate(target_fn),
                               negate_all(gradient_fn),
                               x, y, theta_0, alpha_0)
 
