@@ -32,7 +32,7 @@ def precision(tp, fp, fn, tn):
 def recall(tp, fp, fn, tn):
     return tp / (tp + fn)
 
-def f1_scoare(tp, fp, fn, tn):
+def f1_score(tp, fp, fn, tn):
     p = precision(tp, fp, fn, tn)
     r = recall(tp, fp, fn, tn)
     
