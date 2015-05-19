@@ -131,7 +131,7 @@ def rescale(data_matrix):
     means, stdev = scale(data_matrix)
     
     def rescaled(i,j):
-        if stdevs[j] > 0:
+        if stdev[j] > 0:
             return (data_matrix[i][j] - means[j]) / stdev[j]
         else:
             return data_matrix[i][j]
