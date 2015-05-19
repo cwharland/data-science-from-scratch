@@ -80,7 +80,7 @@ def minimize_stochastic(target_fn, gradient_fn, x, y, theta_0, alpha_0 = 0.01):
     data = zip(x,y)
     theta = theta_0
     alpha = alpha_0
-    min_theta, min_value = None, float('inf')
+    min_theta, min_value = None, float("inf")
     iterations_with_no_improvement = 0
     
     while iterations_with_no_improvement < 100:
